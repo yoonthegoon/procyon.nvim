@@ -135,76 +135,77 @@ local theme = lush(function(injected_functions)
     --
     -- See :h highlight-groups
     --
-    ColorColumn    { bg = lr }, -- Columns set with 'colorcolumn'
-    Conceal        { fg = fg, bg = n }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
-    -- Cursor         { }, -- Character under the cursor
-    CurSearch      { fg = gray1, bg = hy }, -- Highlighting a search pattern under the cursor (see 'hlsearch')
-    -- lCursor        { }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
-    -- CursorIM       { }, -- Like Cursor, but used when in IME mode |CursorIM|
-    CursorColumn   { bg = f }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    CursorLine     { bg = f }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
-    Directory      { fg = hg }, -- Directory names (and other special names in listings)
-    DiffAdd        { bg = lg }, -- Diff mode: Added line |diff.txt|
-    DiffChange     { bg = lb }, -- Diff mode: Changed line |diff.txt|
-    DiffDelete     { gui = "bold", fg = r, bg = f }, -- Diff mode: Deleted line |diff.txt|
-    DiffText       { gui = "bold", bg = r }, -- Diff mode: Changed text within a changed line |diff.txt|
-    EndOfBuffer    { gui = "bold", fg = b}, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
-    -- TermCursor     { }, -- Cursor in a focused terminal
-    -- TermCursorNC   { }, -- Cursor in an unfocused terminal
-    ErrorMsg       { fg = gray11, bg = r }, -- Error messages on the command line
-    -- VertSplit      { }, -- Column separating vertically split windows
-    Folded         { fg = g, bg = n }, -- Line used for closed folds
-    FoldColumn     { fg = hg, bg = f }, -- 'foldcolumn'
-    SignColumn     { fg = hg, bg = f }, -- Column where |signs| are displayed
-    -- IncSearch      { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-    Substitute     { fg = gray1, bg = y }, -- |:substitute| replacement text highlighting
-    LineNr         { fg = y }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    LineNrAbove    { fg = ly }, -- Line number for when the 'relativenumber' option is set, above the cursor line
-    LineNrBelow    { fg = ly }, -- Line number for when the 'relativenumber' option is set, below the cursor line
-    CursorLineNr   { gui = "bold", fg = hy }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    CursorLineFold { fg = hg, bg = f }, -- Like FoldColumn when 'cursorline' is set for the cursor line
-    CursorLineSign { fg = hg, bg = f }, -- Like SignColumn when 'cursorline' is set for the cursor line
-    MatchParen     { bg = hc }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-    ModeMsg        { gui = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
-    -- MsgArea        { }, -- Area for messages and cmdline
-    -- MsgSeparator   { gui = "bold" }, -- Separator for scrolled messages, `msgsep` flag of 'display'
-    MoreMsg        { gui = "bold", fg = g }, -- |more-prompt|
-    NonText        { gui = "bold", fg = b }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    Normal         { fg = t, bg = bg }, -- Normal text
-    NormalFloat    { bg = f }, -- Normal text in floating windows.
-    -- FloatBorder    { }, -- Border of floating windows.
-    FloatTitle     { gui = "bold", fg = p }, -- Title of floating windows.
-    -- NormalNC       { }, -- normal text in non-current windows
-    Pmenu          { bg = f }, -- Popup menu: Normal item.
-    PmenuSel       { bg = n }, -- Popup menu: Selected item.
-    PmenuKind      { bg = f }, -- Popup menu: Normal item "kind"
-    PmenuKindSel   { bg = n }, -- Popup menu: Selected item "kind"
-    PmenuExtra     { bg = f }, -- Popup menu: Normal item "extra text"
-    PmenuExtraSel  { bg = n }, -- Popup menu: Selected item "extra text"
-    PmenuSbar      { bg = f }, -- Popup menu: Scrollbar.
-    PmenuThumb     { bg = hc }, -- Popup menu: Thumb of the scrollbar.
-    Question       { gui = "bold", fg = g }, -- |hit-enter| prompt and yes/no questions
-    QuickFixLine   { fg = gray1, bg = y }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    Search         { fg = gray1, bg = ly }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
-    SpecialKey     { fg = hg }, -- Unprintable characters: text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
-    SpellBad       { gui = "underline" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-    SpellCap       { gui = "underline" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-    SpellLocal     { gui = "underline" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-    SpellRare      { gui = "underline" }, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
-    -- StatusLine     { gui = "bold" }, -- Status line of current window
-    -- StatusLineNC   { }, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    -- TabLine        { }, -- Tab pages line, not active tab page label
-    -- TabLineFill    { }, -- Tab pages line, where there are no labels
-    TabLineSel     { gui = "bold" }, -- Tab pages line, active tab page label
-    Title          { gui = "bold", fg = p }, -- Titles for output from ":set all", ":autocmd" etc.
-    -- Visual         { }, -- Visual mode selection
-    -- VisualNOS      { }, -- Visual mode selection when vim is "Not Owning the Selection".
-    WarningMsg     { fg = r}, -- Warning messages
-    Whitespace     { gui = "bold", fg = n }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-    -- Winseparator   { }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
-    WildMenu       { fg = gray1, bg = y }, -- Current match in 'wildmenu' completion
-    WinBar         { gui = "bold" }, -- Window bar of current window
-    WinBarNC       { gui = "bold" }, -- Window bar of not-current windows
+    ColorColumn      { bg = lr }, -- Columns set with 'colorcolumn'
+    Conceal          { fg = fg, bg = n }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
+    -- Cursor           { }, -- Character under the cursor
+    CurSearch        { fg = gray1, bg = hy }, -- Highlighting a search pattern under the cursor (see 'hlsearch')
+    -- lCursor          { }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
+    -- CursorIM         { }, -- Like Cursor, but used when in IME mode |CursorIM|
+    CursorColumn     { bg = f }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+    CursorLine       { bg = f }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
+    Directory        { fg = hg }, -- Directory names (and other special names in listings)
+    DiffAdd          { bg = lg }, -- Diff mode: Added line |diff.txt|
+    DiffChange       { bg = lb }, -- Diff mode: Changed line |diff.txt|
+    DiffDelete       { gui = "bold", fg = r, bg = f }, -- Diff mode: Deleted line |diff.txt|
+    DiffText         { gui = "bold", bg = r }, -- Diff mode: Changed text within a changed line |diff.txt|
+    EndOfBuffer      { gui = "bold", fg = b}, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
+    -- TermCursor       { }, -- Cursor in a focused terminal
+    -- TermCursorNC     { }, -- Cursor in an unfocused terminal
+    ErrorMsg         { fg = gray11, bg = r }, -- Error messages on the command line
+    -- VertSplit        { }, -- Column separating vertically split windows
+    Folded           { fg = g, bg = n }, -- Line used for closed folds
+    FoldColumn       { fg = hg, bg = f }, -- 'foldcolumn'
+    SignColumn       { fg = hg, bg = f }, -- Column where |signs| are displayed
+    -- IncSearch        { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    Substitute       { fg = gray1, bg = y }, -- |:substitute| replacement text highlighting
+    LineNr           { fg = y }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNrAbove      { fg = ly }, -- Line number for when the 'relativenumber' option is set, above the cursor line
+    LineNrBelow      { fg = ly }, -- Line number for when the 'relativenumber' option is set, below the cursor line
+    CursorLineNr     { gui = "bold", fg = hy }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    CursorLineFold   { fg = hg, bg = f }, -- Like FoldColumn when 'cursorline' is set for the cursor line
+    CursorLineSign   { fg = hg, bg = f }, -- Like SignColumn when 'cursorline' is set for the cursor line
+    MatchParen       { bg = hc }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    ModeMsg          { gui = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
+    -- MsgArea          { }, -- Area for messages and cmdline
+    -- MsgSeparator     { gui = "bold" }, -- Separator for scrolled messages, `msgsep` flag of 'display'
+    MoreMsg          { gui = "bold", fg = g }, -- |more-prompt|
+    NonText          { gui = "bold", fg = b }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+    Normal           { fg = fg, bg = bg }, -- Normal text
+    NormalFloat      { bg = f }, -- Normal text in floating windows.
+    -- NotifyBackground { bg = f },
+    -- FloatBorder      { }, -- Border of floating windows.
+    FloatTitle       { gui = "bold", fg = p }, -- Title of floating windows.
+    NormalNC         { fg = t }, -- normal text in non-current windows
+    Pmenu            { bg = f }, -- Popup menu: Normal item.
+    PmenuSel         { bg = n }, -- Popup menu: Selected item.
+    PmenuKind        { bg = f }, -- Popup menu: Normal item "kind"
+    PmenuKindSel     { bg = n }, -- Popup menu: Selected item "kind"
+    PmenuExtra       { bg = f }, -- Popup menu: Normal item "extra text"
+    PmenuExtraSel    { bg = n }, -- Popup menu: Selected item "extra text"
+    PmenuSbar        { bg = f }, -- Popup menu: Scrollbar.
+    PmenuThumb       { bg = hc }, -- Popup menu: Thumb of the scrollbar.
+    Question         { gui = "bold", fg = g }, -- |hit-enter| prompt and yes/no questions
+    QuickFixLine     { fg = gray1, bg = y }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+    Search           { fg = gray1, bg = ly }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+    SpecialKey       { fg = hg }, -- Unprintable characters: text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
+    SpellBad         { gui = "underline" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+    SpellCap         { gui = "underline" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+    SpellLocal       { gui = "underline" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+    SpellRare        { gui = "underline" }, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
+    StatusLine       { gui = "bold", bg = f }, -- Status line of current window
+    StatusLineNC     { bg = f }, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    -- TabLine          { }, -- Tab pages line, not active tab page label
+    -- TabLineFill      { }, -- Tab pages line, where there are no labels
+    TabLineSel       { gui = "bold" }, -- Tab pages line, active tab page label
+    Title            { gui = "bold", fg = p }, -- Titles for output from ":set all", ":autocmd" etc.
+    Visual           { bg = f }, -- Visual mode selection
+    -- VisualNOS        { }, -- Visual mode selection when vim is "Not Owning the Selection".
+    WarningMsg       { fg = r}, -- Warning messages
+    Whitespace       { gui = "bold", fg = n }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+    -- Winseparator     { }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
+    WildMenu         { fg = gray1, bg = y }, -- Current match in 'wildmenu' completion
+    WinBar           { gui = "bold" }, -- Window bar of current window
+    WinBarNC         { gui = "bold" }, -- Window bar of not-current windows
 
     --
     -- See :h group-name
@@ -244,7 +245,7 @@ local theme = lush(function(injected_functions)
     Special        { fg = lo }, -- (*) Any special symbol
     SpecialChar    { fg = o }, --   Special character in a constant
     Tag            { fg = o }, --   You can use CTRL-] on this
-    Delimiter      { fg = o }, --   Character that needs attention
+    Delimiter      { fg = lo }, --   Character that needs attention
     SpecialComment { fg = ho }, --   Special things inside a comment (e.g. '\n')
     Debug          { fg = o }, --   Debugging statements
 

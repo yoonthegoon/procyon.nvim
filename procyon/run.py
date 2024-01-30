@@ -88,6 +88,6 @@ def main(mode: str = 'dark', flavor: str = 'purple', grayscale_chroma: float = 1
 
 if __name__ == '__main__':
     main(
-        mode='dark',
-        flavor='purple',
+        mode='light',
+        flavor='orange',
     )
