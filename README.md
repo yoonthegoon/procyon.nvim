@@ -1,34 +1,29 @@
 # procyon.nvim
 
-```json
-{
-  "black": "#3b4958",
-  "gray"": "#6a7785",
-  "white": "#a0adbb",
-  "red": "#ca466a",
-  "yellow": "#937000",
-  "green": "#3e8500",
-  "cyan": "#00847a",
-  "blue": "#007db5",
-  "magenta": "#b544c6",
-  "bright black": "#475563",
-  "bright gray": "#8895a3",
-  "bright white": "#c6d2e1",
-  "bright red": "#ec6788",
-  "bright yellow": "#b88d00",
-  "bright green": "#4fa700",
-  "bright cyan": "#00a599",
-  "bright blue": "#009ce1",
-  "bright magenta": "#d269e3",
-  "dark black": "#1c2f3f",
-  "dark gray": "#4e5c6a",
-  "dark white": "#919dac",
-  "dark red": "#ab214e",
-  "dark yellow":  "#725600",
-  "dark green":   "#2e6700",
-  "dark cyan":    "#00665e",
-  "dark blue":    "#00608c",
-  "dark magenta": "#9c08ad",
-}
+```py
+dark_black      = "#35283d"     # dark_black      = "000000"
+black           = "#514358"     # black           = "#35283d"
+dark_gray       = "#7f7087"     # dark_gray       = "#493b51"
+gray            = "#9e8ea6"     # gray            = "#64556b"
+light_gray      = "#c1b0c9"     # light_gray      = "#7f7087"
+white           = "#dccbe5"     # white           = "#b6a6bf"
+bright_white    = "#fefcff"     # bright_white    = "#dccbe5"
+dark_red     = "#cd3f78"        # dark_red     = "#830042"
+dark_orange  = "#c2532f"        # dark_orange  = "#7c1e00"
+dark_yellow  = "#8c7300"        # dark_yellow  = "#4e3f00"
+dark_green   = "#008574"        # dark_green   = "#004940"
+dark_blue    = "#007ac5"        # dark_blue    = "#004370"
+dark_purple  = "#975cbe"        # dark_purple  = "#5c2482"
+red     = "#f16196"             # red     = "#ac195c"
+orange  = "#e7724a"             # orange  = "#a13615"
+yellow  = "#af911c"             # yellow  = "#6c5800"
+green   = "#00a692"             # green   = "#006659"
+blue    = "#0099f5"             # blue    = "#005e99"
+purple  = "#b87adf"             # purple  = "#7940a0"
+bright_red     = "#ff96b7"      # bright_red     = "#cd3f78"
+bright_orange  = "#ff9c7a"      # bright_orange  = "#c2532f"
+bright_yellow  = "#d4b341"      # bright_yellow  = "#8c7300"
+bright_green   = "#00ccb4"      # bright_green   = "#008574"
+bright_blue    = "#7fb9ff"      # bright_blue    = "#007ac5"
+bright_purple  = "#da9eff"      # bright_purple  = "#975cbe"
 ```
-
